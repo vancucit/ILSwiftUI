@@ -23,9 +23,12 @@ public struct PasswordTextField: View {
             Group{
                 if isSecure{
                     SecureField(titleKey, text: $text)
-                    
+                        .autocorrectionDisabled(true)
+                        .autocapitalization(.none)
                 }else{
                     TextField(titleKey, text: $text)
+                        .autocorrectionDisabled(true)
+                        .autocapitalization(.none)
                 }
             }
             .padding([.vertical, .leading])
@@ -37,11 +40,13 @@ public struct PasswordTextField: View {
             }, label: {
                 Image(systemName: !isSecure ? "eye.slash" : "eye" )
                     .renderingMode(.template)
-                    .foregroundColor(.black)
+                    .foregroundColor(Color(UIColor.label))
             })
             .padding([.vertical, .trailing])
         }
-        .overlayRoundedRect()
+        .overlayRoundedRect(color: .gray)
+//        .overlayRoundedRect(color: text.isEmpty ? .red : .gray)
+
     }
 }
 #Preview {

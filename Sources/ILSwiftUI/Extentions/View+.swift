@@ -9,11 +9,13 @@ import SwiftUI
 
 extension View{
     public func overlayRoundedRect(radius:CGFloat = 8,
-                                   lineWidth:CGFloat = 1) -> some View {
+                                   lineWidth:CGFloat = 1,
+                                   color:Color = .gray) -> some View {
         return self
             .overlay(RoundedRectangle(cornerRadius: radius)
-                .stroke(Color.gray, lineWidth: lineWidth))
+                .stroke(color, lineWidth: lineWidth))
 
+        
     }
 
 }

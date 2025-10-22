@@ -26,9 +26,10 @@ extension View {
     public func makeButtonStyleBorder(height:CGFloat? = nil,
                                       foregroundColor:Color? = nil,
                                       backgroundColor:Color) -> some View {
-        self.frame(height:height ?? ButtonConstants.heightDefault)
+        self
             .frame(maxWidth: .infinity)
-            .buttonStyle(PaddingButton())
+            .frame(height:height ?? ButtonConstants.heightDefault)
+//            .buttonStyle(PaddingButton())
             .foregroundColor(foregroundColor)
             .background(RoundedRectangle(cornerRadius: ButtonConstants.cornerRadius)
                 .fill(backgroundColor))

@@ -47,7 +47,7 @@ public struct URLTextField: View {
 
 
         }
-        .overlayRoundedRect()
+        .overlayRoundedRect(color: displayText.isEmpty ? .red : .gray)
 
         .onChange(of: isTyping) { _ ,  newValue in
             updateSecureUI()
